@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    // Miguel skrev allt code i den här scripten
     public Animator animator;
     
     [SerializeField]
@@ -28,7 +29,7 @@ public class player : MonoBehaviour
     void Update()
     {
 
-        animator.SetFloat("speed", Mathf.Abs(speed));
+      
         
         {
             if (Input.GetKey(right))

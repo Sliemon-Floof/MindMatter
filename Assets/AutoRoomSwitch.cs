@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RoomSwitch : MonoBehaviour
+public class AutoRoomSwitch : MonoBehaviour
 {
     [SerializeField]
     private string sceneToSwitchTo;
     private string currentScene;
     [SerializeField]
     private KeyCode activateKey;
-    [SerializeField]
     private GameObject goblin;
     [SerializeField]
-    private Vector3 playerPos;
+    private Vector2 playerPos;
     private float cooldown;
 
     private bool isInBox;
@@ -21,35 +20,24 @@ public class RoomSwitch : MonoBehaviour
     void Start()
     {
         currentScene = gameObject.scene.name;
+        goblin = FindObjectOfType<GameObject>(tag == "Player");
     }
-    private void FixedUpdate()
-    {
-        cooldown -= 1;
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(activateKey) && isInBox && cooldown < 0)
-        {
-            print("yaas");
-            SceneManager.UnloadSceneAsync(currentScene);
-            SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
-            goblin = GameObject.Find("green_hair_girl_spritesheet_0");
-            goblin.transform.position = playerPos;
-            cooldown = 50;
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isInBox = true;
+        print("yaas");
+        SceneManager.UnloadSceneAsync(currentScene);
+        SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
+        goblin.transform.position = playerPos;
 
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isInBox = false;
-    }
+
 }
 
 /*

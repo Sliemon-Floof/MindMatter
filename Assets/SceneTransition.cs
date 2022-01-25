@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("PLayer") && !other.isTrigger)
+        if(other.CompareTag("Player") && !other.isTrigger)
         {
             SceneManager.LoadScene(sceneToLoad);
             print("Work Madafaka");

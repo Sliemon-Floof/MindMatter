@@ -56,7 +56,6 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            print("conversation ended");
             isactive = false;
             box.enabled = false;
 

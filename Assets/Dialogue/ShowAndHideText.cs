@@ -7,11 +7,6 @@ public class ShowAndHideText : MonoBehaviour
 {
     private Text box;
 
-    [SerializeField]
-    private KeyCode hide = KeyCode.H;
-    [SerializeField]
-    private KeyCode show = KeyCode.J;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +17,7 @@ public class ShowAndHideText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowAndHide();
-    }
+        box.enabled = gameObject.GetComponentInParent<DialogueManager>().boxIsVisible;
 
-    private void ShowAndHide()
-    {
-
-        if (Input.GetKeyDown(hide))
-        {
-            box.enabled = false;
-        }
-
-        if (Input.GetKeyDown(show))
-        {
-            box.enabled = true;
-        }
     }
 }

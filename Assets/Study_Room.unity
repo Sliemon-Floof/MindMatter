@@ -173,8 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ab88887fa96bd428d2ffaf2ef0877e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hide: 104
-  show: 106
 --- !u!114 &135951536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,8 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ce3c5cf14c14e47a48d5106217e6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hide: 104
-  show: 106
 --- !u!114 &1031834530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,8 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ab88887fa96bd428d2ffaf2ef0877e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hide: 104
-  show: 106
 --- !u!114 &1212824875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +975,7 @@ MonoBehaviour:
   actorName: {fileID: 1212824875}
   messageText: {fileID: 135951536}
   backgroundBox: {fileID: 2059315190}
+  boxIsVisible: 0
   nextMessage: 32
   hide: 104
   show: 106
-  boxIsVisible: 0

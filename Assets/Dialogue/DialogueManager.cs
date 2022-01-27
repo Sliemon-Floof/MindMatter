@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isactive = false;
+    public bool boxIsVisible;
+
 
     [SerializeField]
     private KeyCode nextMessage;
@@ -22,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     public KeyCode hide;
     [SerializeField]
     public KeyCode show;
-    public bool boxIsVisible;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -82,14 +83,17 @@ public class DialogueManager : MonoBehaviour
     private void ShowAndHide()
     {
 
-        if (Input.GetKeyDown(hide))
-        {
-            box.enabled = false;
-        }
-
-        if (Input.GetKeyDown(show))
+        if (isactive)
         {
             box.enabled = true;
+            boxIsVisible = true;
         }
+        else
+        {
+            box.enabled = false;
+            boxIsVisible = false;
+        }
+
+        
     }
 }

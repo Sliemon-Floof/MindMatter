@@ -50,11 +50,15 @@ public class DialogueManager : MonoBehaviour
         if(isactive == true && activeMessage < currentMessages.Length)
         {
             DisplayMessage();
+            box.enabled = true;
+
         }
         else
         {
             print("conversation ended");
             isactive = false;
+            box.enabled = false;
+
         }
     }
     // Start is called before the first frame update

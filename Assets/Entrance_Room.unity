@@ -726,6 +726,25 @@ Transform:
   m_Father: {fileID: 812627330}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &743444305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4597273701819200997, guid: c24b25abd334c34489778db423cc0d5f, type: 3}
+  m_PrefabInstance: {fileID: 1057645622302721408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &743444306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743444305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f6abc10877dbe4ea79e6cab48d672d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToSwitchTo: MirrorRoom
+  playerPos: {x: 0, y: -9, z: 0}
 --- !u!1 &812627329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,5 +1499,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Transition
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4411766003930493470, guid: c24b25abd334c34489778db423cc0d5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c24b25abd334c34489778db423cc0d5f, type: 3}

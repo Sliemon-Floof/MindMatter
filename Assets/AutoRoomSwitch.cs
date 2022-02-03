@@ -22,14 +22,15 @@ public class AutoRoomSwitch : MonoBehaviour
 
     // Update is called once per frame
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.UnloadSceneAsync(currentScene);
-        SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
-        goblin = GameObject.Find("green_hair_girl_spritesheet_0");
-        goblin.transform.position = playerPos;
-
+        if (other.CompareTag("Player") && !other.isTrigger)
+        {
+            SceneManager.UnloadSceneAsync(currentScene);
+            SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
+            goblin = GameObject.Find("green_hair_girl_spritesheet_0");
+            goblin.transform.position = playerPos;
+        }
     }
 
     /*

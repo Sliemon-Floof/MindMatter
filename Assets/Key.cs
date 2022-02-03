@@ -8,6 +8,8 @@ public class Key : MonoBehaviour
     private KeyCode activateKey;
     private bool isInBox;
     private SpriteRenderer sprite;
+    [SerializeField]
+    private GameObject DialogueBox;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class Key : MonoBehaviour
         {
             print("yaas");
             sprite.enabled = false;
+            DialogueBox.GetComponent<DialogueTrigger>().StartDialogue();
            
         }
     }

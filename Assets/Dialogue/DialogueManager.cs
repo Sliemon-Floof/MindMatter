@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isactive = false;
+    public bool boxIsVisible;
+
 
     [SerializeField]
     private KeyCode nextMessage;
@@ -22,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     public KeyCode hide;
     [SerializeField]
     public KeyCode show;
-    public bool boxIsVisible;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -38,11 +39,24 @@ public class DialogueManager : MonoBehaviour
     {
         Message messageToDisplay = currentMessages[activeMessage];
         messageText.text = messageToDisplay.message;
+       // StartCoroutine("TypeText");
 
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite; 
     }
+    IEnumerator TypeText()
+    {
+        Message messageToDisplay = currentMessages[activeMessage];
+
+        foreach (char c in messageToDisplay.message)
+        {
+            messageText.text += c;
+            yield return new WaitForSeconds(0);
+        }
+    }
+
+   
 
     public void NextMessage()
     {
@@ -50,11 +64,14 @@ public class DialogueManager : MonoBehaviour
         if(isactive == true && activeMessage < currentMessages.Length)
         {
             DisplayMessage();
+            box.enabled = true;
+
         }
         else
         {
-            print("conversation ended");
             isactive = false;
+            box.enabled = false;
+
         }
     }
     // Start is called before the first frame update
@@ -78,14 +95,17 @@ public class DialogueManager : MonoBehaviour
     private void ShowAndHide()
     {
 
-        if (Input.GetKeyDown(hide))
-        {
-            box.enabled = false;
-        }
-
-        if (Input.GetKeyDown(show))
+        if (isactive)
         {
             box.enabled = true;
+            boxIsVisible = true;
         }
+        else
+        {
+            box.enabled = false;
+            boxIsVisible = false;
+        }
+
+        
     }
 }

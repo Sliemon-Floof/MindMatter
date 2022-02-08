@@ -39,11 +39,24 @@ public class DialogueManager : MonoBehaviour
     {
         Message messageToDisplay = currentMessages[activeMessage];
         messageText.text = messageToDisplay.message;
+       // StartCoroutine("TypeText");
 
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite; 
     }
+    IEnumerator TypeText()
+    {
+        Message messageToDisplay = currentMessages[activeMessage];
+
+        foreach (char c in messageToDisplay.message)
+        {
+            messageText.text += c;
+            yield return new WaitForSeconds(0);
+        }
+    }
+
+   
 
     public void NextMessage()
     {

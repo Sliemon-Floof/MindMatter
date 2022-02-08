@@ -10,6 +10,8 @@ public class Key : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField]
     private GameObject DialogueBox;
+    [SerializeField]
+    private SpriteRenderer indicator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class Key : MonoBehaviour
         {
             print("yaas");
             sprite.enabled = false;
+            indicator.enabled = false;
             DialogueBox.GetComponent<DialogueTrigger>().StartDialogue();
            
         }

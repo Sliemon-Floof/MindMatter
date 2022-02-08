@@ -12,11 +12,18 @@ public class Key : MonoBehaviour
     private GameObject DialogueBox;
     [SerializeField]
     private SpriteRenderer indicator;
+    private SavedBools bools;
 
     // Start is called before the first frame update
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();   
+        sprite = GetComponent<SpriteRenderer>();
+
+        // Hides the key if it has been picked up
+        if (GameObject.Find("Bools").GetComponent<SavedBools>().hasLibraryKey)
+        {
+            sprite.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +34,7 @@ public class Key : MonoBehaviour
             print("yaas");
             sprite.enabled = false;
             indicator.enabled = false;
+            GameObject.Find("Bools").GetComponent<SavedBools>().hasLibraryKey = true;
             DialogueBox.GetComponent<DialogueTrigger>().StartDialogue();
            
         }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 //Av Simon Löwenhielm
 public class Indicator : MonoBehaviour
 {

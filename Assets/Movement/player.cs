@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    // Miguel skrev allt code i den här scripten
     public Animator animator;
     
     [SerializeField]
     private KeyCode right; // key for move player right
     [SerializeField]
     private KeyCode left; // key for move player left
-    [SerializeField]
-    private KeyCode Up; // key for move player up
-    [SerializeField]
-    private KeyCode Down; // key for move player down
-    [SerializeField, Range(1, 10)]
+
     private float speed = 7.5f; //movement speed
     Rigidbody2D rb; //rigidbody
 
@@ -32,7 +29,7 @@ public class player : MonoBehaviour
     void Update()
     {
 
-        animator.SetFloat("speed", Mathf.Abs(speed));
+      
         
         {
             if (Input.GetKey(right))
@@ -58,22 +55,7 @@ public class player : MonoBehaviour
             {
                 rb.velocity = new Vector3(0, 0, 0);
             }
-            if (Input.GetKey(Up))
-            {
-                rb.velocity = new Vector3(0, speed, 0); // move Up speed
-            }
-            else if (Input.GetKeyUp(Up))
-            {
-                rb.velocity = new Vector3(0, 0, 0);
-            }
-            if (Input.GetKey(Down))
-            {
-                rb.velocity = new Vector3(0, -speed, 0); // move Down speed
-            }
-            else if (Input.GetKeyUp(Down))
-            {
-                rb.velocity = new Vector3(0, 0, 0);
-            }
+            
 
         }
 

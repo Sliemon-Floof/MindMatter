@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class walking : MonoBehaviour
 {
+    // Miguel skrev allt code i den här scripten
     [SerializeField] private float speed;
     private Rigidbody2D body;
     private Animator anim;
@@ -19,14 +20,7 @@ public class walking : MonoBehaviour
     void Update()
     {
         float Horizontalinput = (Input.GetAxis("Horizontal"));
-        //body.velocity = new Vector2(Horizontalinput * speed, body.velocity.y);
-
-       // if (Horizontalinput > 0.01f)
-          //  transform.localScale - new Vector3.(1, 1, 1);
-      // else if (Horizontalinput < -0.01f)
-         //  Transform.localScale - new Vector3,(-1, 1, 1);
-
-        //set animator parameters
-        anim.SetBool("walk", Horizontalinput != 0);
+       
+        anim.SetBool("walk", Horizontalinput != 0);// set animator parameters
     }
 }

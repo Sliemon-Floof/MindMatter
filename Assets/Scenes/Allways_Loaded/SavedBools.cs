@@ -11,8 +11,10 @@ using UnityEngine;
                                                                                    
 */                                                                                   
 
-[System.Serializable]
-public class Bools : MonoBehaviour
+
+public class SavedBools : MonoBehaviour
 {
-    private bool hasLibraryKey;
+    [SerializeField]
+    public bool hasLibraryKey = false;
+
 }

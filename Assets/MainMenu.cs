@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("Entrance_Room", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Allways_Loaded", LoadSceneMode.Additive);
         //SceneManager.UnloadSceneAsync("main menue");
 
 

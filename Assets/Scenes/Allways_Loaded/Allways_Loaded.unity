@@ -166,3 +166,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8e5592c09db96478a2450c72e90028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasLibraryKey: 0
+  monsterHasClosedDoor: 0

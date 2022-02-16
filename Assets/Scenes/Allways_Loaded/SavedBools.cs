@@ -15,6 +15,6 @@ using UnityEngine;
 public class SavedBools : MonoBehaviour
 {
     [SerializeField]
-    public bool hasLibraryKey = false, monsterHasClosedDoor = false;
+    public bool hasLibraryKey = false, monsterHasClosedDoor = false, hasSeenMirrorMonster = false;
 
 }

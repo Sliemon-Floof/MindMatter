@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToSwitchTo: MirrorFloor
-  playerPos: {x: -20, y: -9.7, z: 0}
+  playerPos: {x: -19, y: -9.7, z: 0}
 --- !u!4 &261548311
 Transform:
   m_ObjectHideFlags: 0

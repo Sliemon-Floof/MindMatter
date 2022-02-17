@@ -29,6 +29,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Hides the key , the indicator, starts the dialogue, and saves the fact that it has been picked up when picked up.
         if (Input.GetKey(activateKey) && isInBox)
         {
             print("yaas");

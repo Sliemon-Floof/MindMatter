@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectionScript : MonoBehaviour
+public class Reflection : MonoBehaviour
 {
     private GameObject goblin;
     [SerializeField]
-    public bool isCreepy;
+    private bool isCreepy;
     private SpriteRenderer currentSprite;
     [SerializeField]
     private SpriteRenderer creepySprite;
@@ -22,7 +22,10 @@ public class ReflectionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.x >= 10)
+        {
+            isCreepy = true;
+        }
         if (isCreepy)
         {
             currentSprite.enabled = false;

@@ -287,8 +287,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261548311}
-  - component: {fileID: 261548310}
   - component: {fileID: 261548309}
+  - component: {fileID: 261548310}
   m_Layer: 0
   m_Name: GoRight
   m_TagString: Untagged
@@ -331,13 +331,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 261548308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee97ee8052818a44853a5ba65e00933, type: 3}
+  m_Script: {fileID: 11500000, guid: 24f6abc10877dbe4ea79e6cab48d672d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToSwitchTo: MirrorFloor
-  activateKey: 101
-  goblin: {fileID: 0}
-  playerPos: {x: -20, y: -9, z: 0}
+  playerPos: {x: -19, y: -9.7, z: 0}
 --- !u!4 &261548311
 Transform:
   m_ObjectHideFlags: 0

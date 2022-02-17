@@ -9,6 +9,12 @@ public class MonsterDoor : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+
+        if (GameObject.Find("Bools").GetComponent<SavedBools>().monsterHasClosedDoor)
+        {
+            animator.SetTrigger("Closing");
+            print("jag glum");
+        }
     }
 
    

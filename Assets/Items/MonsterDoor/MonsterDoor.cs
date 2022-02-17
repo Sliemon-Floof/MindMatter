@@ -11,19 +11,16 @@ public class MonsterDoor : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
+    //Om den tagagar med player de kommer animations trigger starta
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!GameObject.Find("Bools").GetComponent<SavedBools>().monsterHasClosedDoor)
+        if (collision.tag == "Player")
         {
             animator.SetTrigger("Closing");
             print("jag glum");
-            GameObject.Find("Bools").GetComponent<SavedBools>().monsterHasClosedDoor = true;
+            
         }
 
 

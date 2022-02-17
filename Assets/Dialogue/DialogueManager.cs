@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Av simon Löwenhielm (Read Dialogue trigger first)
 public class DialogueManager : MonoBehaviour
 {
     public Image actorImage;
@@ -25,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     public KeyCode show;
 
+    //Updates the current messages and actors when information is sent for Dialogue trigger. Also resets the active message counter
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
         currentMessages = messages;
@@ -35,6 +37,7 @@ public class DialogueManager : MonoBehaviour
         DisplayMessage();
     }
 
+    //Displays the current message, name and image
     void DisplayMessage()
     {
         Message messageToDisplay = currentMessages[activeMessage];
@@ -45,6 +48,8 @@ public class DialogueManager : MonoBehaviour
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite; 
     }
+
+    //Old code that may be used in the future, pls ignore
     IEnumerator TypeText()
     {
         Message messageToDisplay = currentMessages[activeMessage];
@@ -57,7 +62,8 @@ public class DialogueManager : MonoBehaviour
     }
 
    
-
+    //Is called when the player clicks the assigned button
+    // Activates the next message when triggerd, hides the Dialogue system when there are no messages left.
     public void NextMessage()
     {
         activeMessage++;
@@ -92,6 +98,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    //Hides the Dialogue system when necesary
     private void ShowAndHide()
     {
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Av Simon Löwenhielm
 public class AutoRoomSwitch : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,8 @@ public class AutoRoomSwitch : MonoBehaviour
     private bool isInBox;
     // Start is called before the first frame update
     void Start()
+
+    //Gets the current scene so that it can be un loaded
     {
         currentScene = gameObject.scene.name;
     }
@@ -22,6 +25,7 @@ public class AutoRoomSwitch : MonoBehaviour
 
     // Update is called once per frame
 
+    //If the player enters the trigger: unloades the current scene, switches to the chosen scene, moves the player to the assigned position
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
@@ -32,13 +36,4 @@ public class AutoRoomSwitch : MonoBehaviour
             goblin.transform.position = playerPos;
         }
     }
-
-    /*
-
-                print("yaas");
-                SceneManager.LoadScene("TransitionRoom", LoadSceneMode.Additive);
-                SceneManager.UnloadSceneAsync(currentScene);
-                SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
-                SceneManager.UnloadSceneAsync("TransitionRoom");
-    */
 }

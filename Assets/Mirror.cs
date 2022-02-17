@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Av Simon Löwenhielm
 public class Mirror : MonoBehaviour
 {
     [SerializeField]
@@ -17,19 +17,19 @@ public class Mirror : MonoBehaviour
     {
         
     }
-
+    //When the player enters the mirror for the first time WITH THE KEY the reflection becomes "creepy"
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!GameObject.Find("Bools").GetComponent<SavedBools>().hasSeenMirrorMonster && GameObject.Find("Bools").GetComponent<SavedBools>().hasLibraryKey)
         {
             reflection.GetComponent<ReflectionScript>().isCreepy = true;
 
-            print("I saw it");
            
         }
     }
 
     
+    // When the player leaves the mirror after seing the creepy reflection, the reflection becomes normal and the creepy version can't be seen again.
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (GameObject.Find("Bools").GetComponent<SavedBools>().hasLibraryKey)

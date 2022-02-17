@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//Av Simon Löwenhielm
+//Identical to "AutoRoomSwitch" but it is activated on key press and there's a cooldown so that you don't switch back and forth.
 public class RoomSwitch : MonoBehaviour
 {
     [SerializeField]
@@ -52,11 +53,3 @@ public class RoomSwitch : MonoBehaviour
     }
 }
 
-/*
-
-            print("yaas");
-            SceneManager.LoadScene("TransitionRoom", LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(currentScene);
-            SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("TransitionRoom");
-*/

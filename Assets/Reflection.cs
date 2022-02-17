@@ -5,7 +5,6 @@ using UnityEngine;
 public class ReflectionScript : MonoBehaviour
 {
     private GameObject goblin;
-    [SerializeField]
     public bool isCreepy;
     private SpriteRenderer currentSprite;
     [SerializeField]
@@ -21,6 +20,7 @@ public class ReflectionScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    //Hides and shows the normal and monster sprite.
     {
         
         if (isCreepy)

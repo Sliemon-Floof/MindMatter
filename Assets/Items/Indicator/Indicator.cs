@@ -21,6 +21,7 @@ public class Indicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Changes the alpha of the sprite depending on it's distance to the player
      sprite.color = new Color(sprite.color.r,sprite.color.g,sprite.color.b, distance*(goblin.transform.position.x/transform.position.x));
     }
 

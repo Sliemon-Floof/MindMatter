@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Old script don't read (Av Simon Lövenhielm)
 public class Reflection : MonoBehaviour
 {
     private GameObject goblin;
